@@ -504,7 +504,6 @@ document.addEventListener('DOMContentLoaded', () => {
     $('#btnReset').addEventListener('click', resetGame);
     render();
 });
-
 function drHigieneFala(texto) {
   let balao = document.getElementById('drHigieneBaloon');
   if (!balao) {
@@ -530,13 +529,11 @@ function drHigieneFala(texto) {
   const falar = () => {
     const fala = new SpeechSynthesisUtterance(texto);
     fala.lang = 'pt-BR';
-    fala.pitch = 5;
-    fala.rate = 2;
+    fala.pitch = 1;
 
     // Detecta celular/tablet e ajusta velocidade
     const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
-    fala.pitch = isMobile ? 2;
-    fala.rate = isMobile ? 0.8 : 1.0; 
+    fala.rate = isMobile ? 0.7 : 1.0; // mais lento no celular
 
     const vozes = speechSynthesis.getVoices();
     const vozFeminina = vozes.find(v =>
@@ -560,4 +557,5 @@ function drHigieneFala(texto) {
     falar();
   }
 }
+
 
