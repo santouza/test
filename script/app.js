@@ -531,10 +531,12 @@ function drHigieneFala(texto) {
     const fala = new SpeechSynthesisUtterance(texto);
     fala.lang = 'pt-BR';
     fala.pitch = 5;
+    fala.rate = 2;
 
     // Detecta celular/tablet e ajusta velocidade
     const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
-    fala.rate = isMobile ? 0.8 : 1.0; // mais lento no celular
+    fala.pitch = isMobile ? 2;
+    fala.rate = isMobile ? 0.8 : 1.0; 
 
     const vozes = speechSynthesis.getVoices();
     const vozFeminina = vozes.find(v =>
