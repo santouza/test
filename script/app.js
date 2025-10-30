@@ -534,7 +534,7 @@ function drHigieneFala(texto) {
         fala.rate = 2;
 
       const isMobile = /Mobi|Android|iPhone|Ipad/i.test(navigator.userAgent);
-      fala.rate = isMobile ? 0.8 : 1.0;
+      fala.rate = isMobile ? 0.5 : 1.0;
       
         const vozes = speechSynthesis.getVoices();
         const vozFeminina = vozes.find(v =>
