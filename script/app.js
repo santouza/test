@@ -533,7 +533,7 @@ function drHigieneFala(texto) {
 
     // Detecta celular/tablet e ajusta velocidade
     const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
-    fala.rate = isMobile ? 0.8 : 1.2; // mais lento no celular
+    fala.rate = isMobile ? 0.8; // mais lento no celular
 
     const vozes = speechSynthesis.getVoices();
     const vozFeminina = vozes.find(v =>
